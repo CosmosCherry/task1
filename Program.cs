@@ -14,57 +14,57 @@ namespace task1
         static void Main(string[] args)
         {
             int a, b, c;
-            Console.WriteLine("Введите а: ");
+            Console.WriteLine("Введите последовательно а, b, c: ");
             a = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите b: ");
             b = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите c: ");
             c = int.Parse(Console.ReadLine());
             int max1 = Math.Max(a, Math.Max(b, c));
             int min1 = Math.Min(a, Math.Min(b, c));
+            string message = "";
             if (max1 == a)
             {
-                Console.WriteLine($"Самое большое первое число: {a} ");
+                message = "Самое большое первое число:" + a +"\n";
                 if (min1 == b)
                 {
-                    Console.WriteLine($"Самое минимальное второе число: {b} ");
-                    Console.WriteLine($"Среднее число: {c} ");
+                    message+="Самое минимальное второе число:"+ b +"\n";
+                    message += "Среднее число:" +c;
                 }
                 else
                 {
-                    Console.WriteLine($"Самое минимальное третье число: {c} ");
-                    Console.WriteLine($"Среднее число: {b} ");
+                    message += "Самое минимальное третье число:" + c + "\n";
+                    message += "Среднее число:" + b;
                 }
             }
             else if (max1 == b)
             {
-                Console.WriteLine($"Самое большое второе число: {b} ");
+                message = "Самое большое второе число:" + b + "\n";
                 if (min1 == a)
                 {
-                    Console.WriteLine($"Самое минимальное число: {a} ");
-                    Console.WriteLine($"Среднее число: {c} ");
+                    message += "Самое минимальное первое число:" + a + "\n";
+                    message += "Среднее число:" + c;
                 }
                 else
                 {
-                    Console.WriteLine($"Самое минимальное число: {c} ");
-                    Console.WriteLine($"Среднее число: {b} ");
+                    message += "Самое минимальное третье число:" + c + "\n";
+                    message += "Среднее число:" + a;
                 }
 
             }
             else
             {
-                Console.WriteLine($"Самое большое третье число: {c} ");
+                message = "Самое большое третье число:" + c + "\n";
                 if (min1 == a)
                 {
-                    Console.WriteLine($"Самое минимальное первое число: {a} ");
-                    Console.WriteLine($"Среднее число: {b} ");
+                    message += "Самое минимальное первое число:" + a + "\n";
+                    message += "Среднее число:" + b;
                 }
                 else
                 {
-                    Console.WriteLine($"Самое минимальное второе число: {b} ");
-                    Console.WriteLine($"Среднее число: {a} ");
+                    message += "Самое минимальное второе число:" + b + "\n";
+                    message += "Среднее число:" + a;
                 }
             }
+            Console.WriteLine(message);
         }
     }
 }
