@@ -13,6 +13,18 @@ namespace task1
 
     public class Logic
     {
+
+        public static string Task(int a, int b, int c)
+        {
+            string message = ""; 
+            if (Logic.Equal(a, b, c))
+            {
+                message = Logic.Message(a, b, c);
+            }
+            else message = "Числа не разные.";
+            return message;
+        }
+
         public static bool Equal(int a, int b, int c)
         {
             if (a == b || b == c || c == a) return false;
@@ -78,12 +90,8 @@ namespace task1
             a = int.Parse(Console.ReadLine());
             b = int.Parse(Console.ReadLine());
             c = int.Parse(Console.ReadLine());
-            if (Logic.Equal(a, b, c))
-            {
-                string message = Logic.Message(a, b, c);
-                Console.WriteLine(message);
-            }
-            else  Console.WriteLine("Ввод не различных чисел.");
+            string message = Logic.Task( a,  b,  c);
+            Console.WriteLine(message);
         }
     }
 }
