@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,11 @@ using System.Threading.Tasks;
 
 namespace task1
 {
-    internal class Program
+
+    public class Logic
     {
-        static void Main(string[] args)
+        public static string Message(int a, int b, int c )
         {
-            int a, b, c;
-            Console.WriteLine("Введите последовательно а, b, c: ");
-            a = int.Parse(Console.ReadLine());
-            b = int.Parse(Console.ReadLine());
-            c = int.Parse(Console.ReadLine());
             int max1 = Math.Max(a, Math.Max(b, c));
             int min1 = Math.Min(a, Math.Min(b, c));
             string message = "";
@@ -64,6 +61,19 @@ namespace task1
                     message += "Среднее число:" + a;
                 }
             }
+            return message;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            Console.WriteLine("Введите последовательно а, b, c: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            string message = Logic.Message(a,b,c);
             Console.WriteLine(message);
         }
     }
