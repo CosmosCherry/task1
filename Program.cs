@@ -13,6 +13,11 @@ namespace task1
 
     public class Logic
     {
+        public static bool Equal(int a, int b, int c)
+        {
+            if (a == b || b == c || c == a) return false;
+            else return true;
+        }
         public static string Message(int a, int b, int c )
         {
             int max1 = Math.Max(a, Math.Max(b, c));
@@ -20,44 +25,44 @@ namespace task1
             string message = "";
             if (max1 == a)
             {
-                message = "Самое большое первое число:" + a +"\n";
+                message = "Самое большое первое число:" + a +". ";
                 if (min1 == b)
                 {
-                    message+="Самое минимальное второе число:"+ b +"\n";
+                    message+="Самое минимальное второе число:"+ b +". ";
                     message += "Среднее число:" +c;
                 }
                 else
                 {
-                    message += "Самое минимальное третье число:" + c + "\n";
+                    message += "Самое минимальное третье число:" + c + ". ";
                     message += "Среднее число:" + b;
                 }
             }
             else if (max1 == b)
             {
-                message = "Самое большое второе число:" + b + "\n";
+                message = "Самое большое второе число:" + b + ". ";
                 if (min1 == a)
                 {
-                    message += "Самое минимальное первое число:" + a + "\n";
+                    message += "Самое минимальное первое число:" + a + ". ";
                     message += "Среднее число:" + c;
                 }
                 else
                 {
-                    message += "Самое минимальное третье число:" + c + "\n";
+                    message += "Самое минимальное третье число:" + c + ". ";
                     message += "Среднее число:" + a;
                 }
 
             }
             else
             {
-                message = "Самое большое третье число:" + c + "\n";
+                message = "Самое большое третье число:" + c + ". ";
                 if (min1 == a)
                 {
-                    message += "Самое минимальное первое число:" + a + "\n";
+                    message += "Самое минимальное первое число:" + a + ". ";
                     message += "Среднее число:" + b;
                 }
                 else
                 {
-                    message += "Самое минимальное второе число:" + b + "\n";
+                    message += "Самое минимальное второе число:" + b + ". ";
                     message += "Среднее число:" + a;
                 }
             }
@@ -73,8 +78,12 @@ namespace task1
             a = int.Parse(Console.ReadLine());
             b = int.Parse(Console.ReadLine());
             c = int.Parse(Console.ReadLine());
-            string message = Logic.Message(a,b,c);
-            Console.WriteLine(message);
+            if (Logic.Equal(a, b, c))
+            {
+                string message = Logic.Message(a, b, c);
+                Console.WriteLine(message);
+            }
+            else  Console.WriteLine("Ввод не различных чисел.");
         }
     }
 }
